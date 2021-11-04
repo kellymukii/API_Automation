@@ -1,0 +1,74 @@
+services:
+  - name: bonga-all-matrix
+    tag: encrypted
+    developer: developer1
+    tester: tester1
+
+  - name: bonga-data-matrix
+    tag: encrypted
+    developer: developer1
+    tester: tester1
+
+  - name: hakikisha
+    tag: encrypted
+    method: post
+    developer: developer1
+    tester: tester1
+
+  - name: users
+    tag: plain
+    method: get
+    developer: developer1
+    tester: tester1
+
+metadata:
+  project: dxl
+  environment: aws-prod
+  collection: dxl-aws-build
+  domain: DE
+  stream: false
+
+maskedfields:
+  X-DeviceInfo: "hidden field"
+  X-DeviceId: "hidden field"
+  X-DeviceToken: "hidden field"
+  Authorization: "hidden field"
+
+headers:
+  Content-Type: application/json
+  Authorization: "Bearer {{bearertoken}}"
+  X-Source-CountryCode: KE
+  X-Source-Operator: mysafaricom
+  X-Source-Division: DE
+  X-Source-System: mysafaricom-android
+  X-Source-Timestamp: "{{timestamp}}"
+  X-Correlation-ConversationID: "{{uuid}}"
+  X-MessageID: "bs1jrgr8j2HpcWAi|LOwMjNpirmpJo0BS|sxf7c63g8FoZ17fy"
+  X-DeviceInfo: "{{xdeviceinfo}}"
+  X-DeviceId: "{{xdeviceid}}"
+  X-DeviceToken: "{{xdevicetoken}}"
+  X-MSISDN: "{{msisdn}}"
+  X-App: mysafaricom-android
+  X-Version: 1
+  x-api-key: "{{xapikey}}"
+
+data:
+  msisdn: 0797916850
+  till: 999990
+  paybill: 2222
+  otp: 8080
+  puk: 32107610
+  id: 31395225
+  bearertoken: eyJraWQiOiJjVGgyYmd5U1NEQ2N4OHVzNVNIRTh0U0JTTlwvXC9UTGI1S2g0dGpsaVNuUWM9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiI1cmMzaDA2cDQyZHFiMGgxZTRja3JvcW0xaSIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiaHR0cHM6XC9cL3NhZmFyaWNvbWFwcC5hdXRoLmV1LXdlc3QtMS5hbWF6b25jb2duaXRvLmNvbVwvb2F1dGgucmVhZCIsImF1dGhfdGltZSI6MTYwMTgwMDU2OSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfRDVLMlo2M0JlIiwiZXhwIjoxNjAxODA0MTY5LCJpYXQiOjE2MDE4MDA1NjksInZlcnNpb24iOjIsImp0aSI6ImEwZTA2NGQ0LTk5NmMtNGUzOC1hM2RlLWUwMzhhOTM0NDQ3NCIsImNsaWVudF9pZCI6IjVyYzNoMDZwNDJkcWIwaDFlNGNrcm9xbTFpIn0.RJqhgYUkZ1X00mUEjXtQ4L8TwrikK4J25aB9iUBZADPYceH4docLCbV5kzURWGPkYnrUJH5lsreJJc9hzxH9i2w5HXpHx7Q4L_wlaeHHsvIcgkJfowzeUpNIBA8g8r3mBRWnvJr7MdpnN1jeUS9dTfVZkuB6uVKTzJAg56oCcxq2F-VtuO4bwRgwN9kHhQiF75di6ngX89iPhLdQhZL_ytoTCSa4raVCOtCK1ZcAERRgLauYRuEDpzl8mw9mxxFdWZxYkaHbR0vkgO_GQbCiXcGmdXSvD4xVFsZIaLl5556iz9ngyzXzhjfJz5EHEJmitOtf7autV5YUkO7dJrN_2A
+  xdeviceinfo: "42eb199e-a2a9-4a0a-b43b-c3ec3c9c92da"
+  xdevicetoken: "80oUpqrk9WOfA66Gbgh62UhfAN4Jzx"
+  envbaseurl: "https://api.dxlapi.safaricom.co.ke"
+  azureBaseUrl: "https://dxlapiazprod.safaricom.co.ke"
+  mkcbstk: http://10.184.18.13:9097
+  xapikey: a50d6e0ad7794ccd8c6f7eae88de499f
+  xdeviceid: "cdvasc0bvnbda3"
+  Content-Type: application/json
+
+
+scenarioutline:
+  example:

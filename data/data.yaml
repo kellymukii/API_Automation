@@ -1,0 +1,232 @@
+#- scenario: Validate bonga airtime matrix
+#  service: bonga-all-matrix
+#  repricas: 1
+#  url: "{{envbaseurl}}/dxl/bongamatrix/v1/bongamatrixs"
+#  method: get
+#  status: 200
+#  validators:
+#    - validate: {extract: "header.responseCode", "comparator": "==" , "expected": "200"}
+#    - validate: {extract: "body.0.resourceName", "comparator": "==" , "expected": "Free Airtime"}
+#    - validate: {extract: "body.0.resourceType", "comparator": "==" , "expected": "2001"}
+#
+#    - validate: {extract: "body.0.bongaPoints", "comparator": "==" , "expected": "10"}
+#    - validate: {extract: "body.0.resourceUnit", "comparator": "==" , "expected": "3"}
+#
+#    - validate: { extract: "body.1.bongaPoints", "comparator": "==" , "expected": "25" }
+#    - validate: { extract: "body.1.resourceUnit", "comparator": "==" , "expected": "8" }
+#
+#    - validate: { extract: "body.2.bongaPoints", "comparator": "==" , "expected": "50" }
+#    - validate: { extract: "body.2.resourceUnit", "comparator": "==" , "expected": "15" }
+#
+#    - validate: { extract: "body.3.bongaPoints", "comparator": "==" , "expected": "100" }
+#    - validate: { extract: "body.3.resourceUnit", "comparator": "==" , "expected": "30" }
+#
+#    - validate: { extract: "body.4.bongaPoints", "comparator": "==" , "expected": "200" }
+#    - validate: { extract: "body.4.resourceUnit", "comparator": "==" , "expected": "60" }
+#
+#    - validate: { extract: "body.5.bongaPoints", "comparator": "==" , "expected": "300" }
+#    - validate: { extract: "body.5.resourceUnit", "comparator": "==" , "expected": "90" }
+#
+#    - validate: { extract: "body.6.bongaPoints", "comparator": "==" , "expected": "400" }
+#    - validate: { extract: "body.6.resourceUnit", "comparator": "==" , "expected": "120" }
+#
+#    - validate: { extract: "body.7.bongaPoints", "comparator": "==" , "expected": "500" }
+#    - validate: { extract: "body.7.resourceUnit", "comparator": "==" , "expected": "150" }
+#
+#    - validate: { extract: "body.8.bongaPoints", "comparator": "==" , "expected": "700" }
+#    - validate: { extract: "body.8.resourceUnit", "comparator": "==" , "expected": "210" }
+#
+#    - validate: { extract: "body.9.bongaPoints", "comparator": "==" , "expected": "1000" }
+#    - validate: { extract: "body.9.resourceUnit", "comparator": "==" , "expected": "300" }
+#
+#    - validate: { extract: "body.10.bongaPoints", "comparator": "==" , "expected": "1500" }
+#    - validate: { extract: "body.10.resourceUnit", "comparator": "==" , "expected": "450" }
+#
+#    - validate: { extract: "body.11.bongaPoints", "comparator": "==" , "expected": "2000" }
+#    - validate: { extract: "body.11.resourceUnit", "comparator": "==" , "expected": "600" }
+#
+#
+#- scenario: Validate bonga Free Minutes matrix
+#  service: bonga-all-matrix
+#  url: "{{envbaseurl}}/dxl/bongamatrix/v1/bongamatrix"
+#  method: get
+#  status: 200
+#  validators:
+#    - validate: {extract: "body.12.resourceName", "comparator": "==" , "expected": "Free Minutes"}
+#    - validate: {extract: "body.12.resourceType", "comparator": "==" , "expected": "4000"}
+#    - validate: {extract: "body.12.bongaPoints", "comparator": "==" , "expected": "50"}
+#    - validate: {extract: "body.12.resourceUnit", "comparator": "==" , "expected": "4"}
+#    #
+#    - validate: { extract: "body.13.bongaPoints", "comparator": "==" , "expected": "100" }
+#    - validate: { extract: "body.13.resourceUnit", "comparator": "==" , "expected": "7" }
+#
+#    - validate: { extract: "body.14.bongaPoints", "comparator": "==" , "expected": "200" }
+#    - validate: { extract: "body.14.resourceUnit", "comparator": "==" , "expected": "15" }
+#    #
+#    - validate: { extract: "body.15.bongaPoints", "comparator": "==" , "expected": "300" }
+#    - validate: { extract: "body.15.resourceUnit", "comparator": "==" , "expected": "20" }
+#
+#    - validate: { extract: "body.16.bongaPoints", "comparator": "==" , "expected": "400" }
+#    - validate: { extract: "body.16.resourceUnit", "comparator": "==" , "expected": "30" }
+#
+#    - validate: { extract: "body.17.bongaPoints", "comparator": "==" , "expected": "500" }
+#    - validate: { extract: "body.17.resourceUnit", "comparator": "==" , "expected": "35" }
+#
+#    - validate: { extract: "body.18.bongaPoints", "comparator": "==" , "expected": "800" }
+#    - validate: { extract: "body.18.resourceUnit", "comparator": "==" , "expected": "55" }
+#
+#    - validate: { extract: "body.19.bongaPoints", "comparator": "==" , "expected": "1000" }
+#    - validate: { extract: "body.19.resourceUnit", "comparator": "==" , "expected": "70" }
+#
+#    - validate: { extract: "body.20.bongaPoints", "comparator": "==" , "expected": "1500" }
+#    - validate: { extract: "body.20.resourceUnit", "comparator": "==" , "expected": "105" }
+#
+#    - validate: { extract: "body.21.bongaPoints", "comparator": "==" , "expected": "2000" }
+#    - validate: { extract: "body.21.resourceUnit", "comparator": "==" , "expected": "140" }
+#
+#    - validate: { extract: "body.22.bongaPoints", "comparator": "==" , "expected": "3000" }
+#    - validate: { extract: "body.22.resourceUnit", "comparator": "==" , "expected": "210" }
+#
+#    - validate: { extract: "body.23.bongaPoints", "comparator": "==" , "expected": "4000" }
+#    - validate: { extract: "body.23.resourceUnit", "comparator": "==" , "expected": "280" }
+#
+#
+#- scenario: Validate bonga Free mms matrix
+#  service: bonga-all-matrix
+#  url: "{{envbaseurl}}/dxl/bongamatrix/v1/bongamatrix"
+#  method: get
+#  status: 200
+#  validators:
+#    - validate: {extract: "body.24.resourceName", "comparator": "==" , "expected": "Free Mms"}
+#    - validate: {extract: "body.24.resourceType", "comparator": "==" , "expected": "4300"}
+#    - validate: {extract: "body.24.bongaPoints", "comparator": "==" , "expected": "25"}
+#    - validate: {extract: "body.24.resourceUnit", "comparator": "==" , "expected": "2"}
+#
+#    - validate: { extract: "body.25.bongaPoints", "comparator": "==" , "expected": "50" }
+#    - validate: { extract: "body.25.resourceUnit", "comparator": "==" , "expected": "3" }
+#
+#    - validate: { extract: "body.26.bongaPoints", "comparator": "==" , "expected": "100" }
+#    - validate: { extract: "body.26.resourceUnit", "comparator": "==" , "expected": "5" }
+#    #
+#    - validate: { extract: "body.27.bongaPoints", "comparator": "==" , "expected": "150" }
+#    - validate: { extract: "body.27.resourceUnit", "comparator": "==" , "expected": "8" }
+#
+#    - validate: { extract: "body.28.bongaPoints", "comparator": "==" , "expected": "200" }
+#    - validate: { extract: "body.28.resourceUnit", "comparator": "==" , "expected": "12" }
+#
+#    - validate: { extract: "body.29.bongaPoints", "comparator": "==" , "expected": "250" }
+#    - validate: { extract: "body.29.resourceUnit", "comparator": "==" , "expected": "15" }
+#
+#    - validate: { extract: "body.30.bongaPoints", "comparator": "==" , "expected": "300" }
+#    - validate: { extract: "body.30.resourceUnit", "comparator": "==" , "expected": "20" }
+#
+#    - validate: { extract: "body.31.bongaPoints", "comparator": "==" , "expected": "500" }
+#    - validate: { extract: "body.31.resourceUnit", "comparator": "==" , "expected": "30" }
+#
+#    - validate: { extract: "body.32.bongaPoints", "comparator": "==" , "expected": "1000" }
+#    - validate: { extract: "body.32.resourceUnit", "comparator": "==" , "expected": "60" }
+#
+#    - validate: { extract: "body.33.bongaPoints", "comparator": "==" , "expected": "1500" }
+#    - validate: { extract: "body.33.resourceUnit", "comparator": "==" , "expected": "90" }
+#
+#    - validate: { extract: "body.34.bongaPoints", "comparator": "==" , "expected": "2000" }
+#    - validate: { extract: "body.34.resourceUnit", "comparator": "==" , "expected": "120" }
+#
+#    - validate: { extract: "body.35.bongaPoints", "comparator": "==" , "expected": "2500" }
+#    - validate: { extract: "body.35.resourceUnit", "comparator": "==" , "expected": "150" }
+#
+#    - validate: { extract: "body.36.bongaPoints", "comparator": "==" , "expected": "3000" }
+#    - validate: { extract: "body.36.resourceUnit", "comparator": "==" , "expected": "180" }
+#
+#    - validate: { extract: "body.37.bongaPoints", "comparator": "==" , "expected": "3500" }
+#    - validate: { extract: "body.37.resourceUnit", "comparator": "==" , "expected": "210" }
+#
+#
+#- scenario: Validate bonga Free Sms matrix
+#  service: bonga-all-matrix
+#  url: "{{awsbaseurl}}/dxl/bongamatrix/v1/bongamatrix"
+#  method: get
+#  status: 200
+#  validators:
+#    - validate: {extract: "body.38.resourceName", "comparator": "==" , "expected": "Free Sms"}
+#    - validate: {extract: "body.38.resourceType", "comparator": "==" , "expected": "5013"}
+#    - validate: {extract: "body.38.bongaPoints", "comparator": "==" , "expected": "20"}
+#    - validate: {extract: "body.38.resourceUnit", "comparator": "==" , "expected": "5"}
+#
+#    - validate: { extract: "body.39.bongaPoints", "comparator": "==" , "expected": "40" }
+#    - validate: { extract: "body.39.resourceUnit", "comparator": "==" , "expected": "10" }
+#
+#    - validate: { extract: "body.40.bongaPoints", "comparator": "==" , "expected": "75" }
+#    - validate: { extract: "body.40.resourceUnit", "comparator": "==" , "expected": "20" }
+#    #
+#    - validate: { extract: "body.41.bongaPoints", "comparator": "==" , "expected": "150" }
+#    - validate: { extract: "body.41.resourceUnit", "comparator": "==" , "expected": "40" }
+#
+#    - validate: { extract: "body.42.bongaPoints", "comparator": "==" , "expected": "200" }
+#    - validate: { extract: "body.42.resourceUnit", "comparator": "==" , "expected": "55" }
+#
+#    - validate: { extract: "body.43.bongaPoints", "comparator": "==" , "expected": "250" }
+#    - validate: { extract: "body.43.resourceUnit", "comparator": "==" , "expected": "70" }
+#
+#    - validate: { extract: "body.44.bongaPoints", "comparator": "==" , "expected": "350" }
+#    - validate: { extract: "body.44.resourceUnit", "comparator": "==" , "expected": "95" }
+#
+#    - validate: { extract: "body.45.bongaPoints", "comparator": "==" , "expected": "750" }
+#    - validate: { extract: "body.45.resourceUnit", "comparator": "==" , "expected": "205" }
+#
+#    - validate: { extract: "body.46.bongaPoints", "comparator": "==" , "expected": "1250" }
+#    - validate: { extract: "body.46.resourceUnit", "comparator": "==" , "expected": "340" }
+#
+#    - validate: { extract: "body.47.bongaPoints", "comparator": "==" , "expected": "1500" }
+#    - validate: { extract: "body.47.resourceUnit", "comparator": "==" , "expected": "400" }
+#
+#    - validate: { extract: "body.48.bongaPoints", "comparator": "==" , "expected": "2000" }
+#    - validate: { extract: "body.48.resourceUnit", "comparator": "==" , "expected": "550" }
+#
+#    - validate: { extract: "body.49.bongaPoints", "comparator": "==" , "expected": "2500" }
+#    - validate: { extract: "body.49.resourceUnit", "comparator": "==" , "expected": "700" }
+#
+#    - validate: { extract: "body.50.bongaPoints", "comparator": "==" , "expected": "3000" }
+#    - validate: { extract: "body.50.resourceUnit", "comparator": "==" , "expected": "800" }
+#
+#- scenario: Validate bonga Free data matrix
+#  service: bonga-all-matrix
+#  url: "{{awsbaseurl}}/dxl/bongamatrix/v1/bongamatrix"
+#  method: get
+#  status: 200
+#  validators:
+#    - validate: {extract: "body.51.resourceName", "comparator": "==" , "expected": "Free Internet"}
+#    - validate: {extract: "body.51.resourceType", "comparator": "==" , "expected": "5054"}
+#    - validate: {extract: "body.51.bongaPoints", "comparator": "==" , "expected": "100"}
+#    - validate: {extract: "body.51.resourceUnit", "comparator": "==" , "expected": "100"}
+#
+#    - validate: { extract: "body.52.bongaPoints", "comparator": "==" , "expected": "250" }
+#    - validate: { extract: "body.52.resourceUnit", "comparator": "==" , "expected": "250" }
+#
+#    - validate: { extract: "body.53.bongaPoints", "comparator": "==" , "expected": "500" }
+#    - validate: { extract: "body.53.resourceUnit", "comparator": "==" , "expected": "500" }
+#    #
+#    - validate: { extract: "body.54.bongaPoints", "comparator": "==" , "expected": "1000" }
+#    - validate: { extract: "body.54.resourceUnit", "comparator": "==" , "expected": "1000" }
+#
+- scenario: validate get users
+  service: users
+  url: "https://reqres.in/api/users?page=2"
+#  repricas: 1000
+  method: get
+  status: 200
+#  validators:
+#    - validate: {extract: "body.0.resourceName", "comparator": "==" , "expected": "Free Internet"}
+#    - validate: {extract: "body.0.resourceType", "comparator": "==" , "expected": "5054"}
+#    - validate: {extract: "body.0.bongaPoints", "comparator": "==" , "expected": "100"}
+#    - validate: {extract: "body.0.resourceUnit", "comparator": "==" , "expected": "100"}
+#
+#    - validate: { extract: "body.1.bongaPoints", "comparator": "==" , "expected": "250" }
+#    - validate: { extract: "body.1.resourceUnit", "comparator": "==" , "expected": "250" }
+#
+#    - validate: { extract: "body.2.bongaPoints", "comparator": "==" , "expected": "500" }
+#    - validate: { extract: "body.2.resourceUnit", "comparator": "==" , "expected": "500" }
+#    #
+#    - validate: { extract: "body.3.bongaPoints", "comparator": "==" , "expected": "1000" }
+#    - validate: { extract: "body.3.resourceUnit", "comparator": "==" , "expected": "1000" }
+

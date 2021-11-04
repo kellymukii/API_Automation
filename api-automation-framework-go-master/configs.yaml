@@ -1,0 +1,4 @@
+brokers: "svdt5qakafcl01:9092,svdt5qakafcl01:9093,svdt5qakafcl02:9092"
+topic: "QA_dat_preprocess_api_automation"
+#proxy: "http://proxy2:8080/"
+noproxy: "dxl.kubernetesuat.safaricom.co.ke,dxl.kubernetesclusterprod.safaricom.net,api.dxlapi.safaricom.co.ke"
